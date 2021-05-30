@@ -17,24 +17,13 @@ public class ProformaInvoiceDomainServiceImpl implements ProformaInvoiceDomainSe
     @Autowired
     private ProformaInvoiceRepository proformaInvoiceRepository;
 
-//    @Async(ThreadConfig.THREAD_NAME_PROFORMA_INVOICE_RESULT)
     @Override
-    public void generateResult(Aggregate<ProformaInvoiceBO> invoiceAggregate) {
-        if (!ProformaInvoiceStatusEnum.NORMAL.equals(invoiceAggregate.getRoot().getStatus())) {
-            return;
-        }
-        try {
-            Thread.sleep(500L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String resultUrl = "https://www.baidu.com";
+    public void saveResult(Aggregate<ProformaInvoiceBO> invoiceAggregate, String resultUrl) {
         // 双重校验
         if (!ProformaInvoiceStatusEnum.NORMAL.equals(invoiceAggregate.getRoot().getStatus())) {
             return;
         } else {
             invoiceAggregate.getRoot().setResultUrl(resultUrl);
-            // 这边更新的时候 如果有并发 会导致这里更新失败，但是正常业务已开票也不能操作，除非作废和重新变成草稿状态
             proformaInvoiceRepository.save(invoiceAggregate);
         }
     }
