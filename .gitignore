@@ -1,0 +1,8 @@
+# Project exclude paths
+/demo-adapter/target/
+/demo-application-api/target/
+/demo-application-command/target/
+/demo-application-query/target/
+/demo-domain/target/
+/demo-infrastructure/target/
+/start/target/

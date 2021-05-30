@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.infrastructure.database.proforma.invoice.ProformaInvoiceMapper">
+    <update id="updateByIdSelective" >
+        update t_proforma_invoice
+        <set>
+            <if test="('invoiceNo' in changedFields)">
+                invoice_no = #{invoice.invoiceNo},
+            </if>
+            <if test="('invoiceDt' in changedFields)">
+                invoice_dt = #{invoice.invoiceDt},
+            </if>
+            <if test="('invoiceOprDt' in changedFields)">
+                invoice_opr_dt = #{invoice.invoiceOprDt},
+            </if>
+            <if test="('invoicePriceTotal' in changedFields)">
+                invoice_price_total = #{invoice.invoicePriceTotal},
+            </if>
+            <if test="('invoiceStatus' in changedFields)">
+                invoice_status = #{invoice.invoiceStatus},
+            </if>
+            <if test="('invoiceResultUrl' in changedFields)">
+                invoice_result_url = #{invoice.invoiceResultUrl},
+            </if>
+            <if test="('currency' in changedFields)">
+                currency = #{invoice.currency},
+            </if>
+            <if test="('supplier' in changedFields)">
+                supplier = #{invoice.supplier},
+            </if>
+            <if test="('tradeCondition' in changedFields)">
+                trade_condition = #{invoice.tradeCondition},
+            </if>
+            <if test="('consumerName' in changedFields)">
+                consumer_name = #{invoice.consumerName},
+            </if>
+            <if test="('consumerAddr' in changedFields)">
+                consumer_addr = #{invoice.consumerAddr},
+            </if>
+            <if test="('consumerMobile' in changedFields)">
+                consumer_mobile = #{invoice.consumerMobile},
+            </if>
+            <if test="('consumerFax' in changedFields)">
+                consumer_fax = #{invoice.consumerFax},
+            </if>
+            <if test="('showedContainerNo' in changedFields)">
+                is_show_container_no = #{invoice.showedContainerNo},
+            </if>
+            <if test="('containerNoList' in changedFields)">
+                container_no_list = #{invoice.containerNoList},
+            </if>
+            <if test="('accessoryList' in changedFields)">
+                accessory_list = #{invoice.accessoryList},
+            </if>
+            <if test="('applyUid' in changedFields)">
+                apply_uid = #{invoice.applyUid},
+            </if>
+            <if test="('applyName' in changedFields)">
+                apply_name = #{invoice.applyName},
+            </if>
+            <if test="('oprUid' in changedFields)">
+                opr_uid = #{invoice.oprUid},
+            </if>
+            <if test="('oprName' in changedFields)">
+                opr_name = #{invoice.oprName},
+            </if>
+            <if test="('oprReason' in changedFields)">
+                opr_reason = #{invoice.oprReason},
+            </if>
+            version = version + 1,
+        </set>
+        where id = #{invoice.id} and version = #{invoice.version}
+    </update>
+
+
+</mapper>
