@@ -68,6 +68,9 @@
             <if test="('oprReason' in changedFields)">
                 opr_reason = #{invoice.oprReason},
             </if>
+            <if test="('isDelete' in changedFields)">
+                is_delete = #{invoice.isDelete},
+            </if>
             version = version + 1,
         </set>
         where id = #{invoice.id} and version = #{invoice.version}

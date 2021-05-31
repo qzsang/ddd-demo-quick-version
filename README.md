@@ -12,4 +12,5 @@
 └── demo-domain 业务领域模块
 └── demo-infrastructure 基础模块模块
 └── start   启动和配置模块
+└── db   demo的sql脚本
 ```
