@@ -7,7 +7,7 @@
 - 业务得到了更准确的定义和理解
 - “领域专家们”可以为软件设计做出贡献
 - 业务被集中在业务模型上，不会随着时间的流逝和人员的迭代而被遗忘
-- 隔离业务逻辑和具体技术实现（业务会越来越稳定，技术会越来越不稳定）
+- 隔离业务逻辑和具体技术实现（业务会趋于稳定，技术会越来越不稳定）
 - 更注重核心业务
 
 
@@ -24,6 +24,6 @@
 ```
 ![项目架构图](https://github.com/qzsang/ddd-demo-quick-version/blob/master/doc/p2.png)
 
-### 架构和微服务的演进
+### 架构和微服务的演进方式
 ![演进关系](https://github.com/qzsang/ddd-demo-quick-version/blob/master/doc/p3.png)
 
