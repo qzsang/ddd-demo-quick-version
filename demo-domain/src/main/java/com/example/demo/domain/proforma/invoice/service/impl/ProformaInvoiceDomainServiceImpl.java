@@ -19,7 +19,7 @@ public class ProformaInvoiceDomainServiceImpl implements ProformaInvoiceDomainSe
 
     @Override
     public void saveResult(Aggregate<ProformaInvoiceBO> invoiceAggregate, String resultUrl) {
-        // 双重校验
+        // 校验
         if (!ProformaInvoiceStatusEnum.NORMAL.equals(invoiceAggregate.getRoot().getStatus())) {
             return;
         } else {
