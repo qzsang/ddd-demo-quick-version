@@ -27,3 +27,5 @@
 ### 架构和微服务的演进方式
 ![演进关系](https://github.com/qzsang/ddd-demo-quick-version/blob/master/doc/p3.png)
 
+### PPT
+https://github.com/qzsang/ddd-demo-quick-version/blob/master/doc/DDD-%E5%81%9A%E4%B8%9A%E5%8A%A1%E7%9A%84%E6%B2%89%E6%B7%80%E8%80%85.pptx
